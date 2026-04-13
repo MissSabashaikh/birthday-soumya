@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise for Soumya</title>
+    <style>
+        body { text-align: center; background-color: #fdf6e3; }
+        #cake { display: none; }
+        #confetti { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Soumya's Birthday Surprise!</h1>
+    <input type="password" id="password" placeholder="Enter Password" />
+    <button id="submit">Submit</button>
+    <div id="cake">
+        <img src="cake.png" alt="Birthday Cake" />
+        <audio id="birthday-music" src="birthday-music.mp3" autoplay loop></audio>
+        <button onclick="blowCandle()">Blow the Candle!</button>
+        <button onclick="cutCake()">Cut the Cake!</button>
+    </div>
+    <div id="confetti"></div>
+    <script>
+        const correctPassword = 'happybirthday';
+        document.getElementById('submit').onclick = function() {
+            const userPassword = document.getElementById('password').value;
+            if (userPassword === correctPassword) {
+                document.getElementById('cake').style.display = 'block';
+                startConfetti();
+            } else {
+                alert('Incorrect password!');
+            }
+        };
+        function blowCandle() {
+            alert('Candle Blown! 🎂');
+            // Add candle blowing animation logic here
+        }
+        function cutCake() {
+            alert('Cake Cut! 🎉');
+            // Add cake cutting animation logic here
+        }
+        function startConfetti() {
+            // Add confetti effect logic here
+            alert('Happy Birthday, Soumya! 🎊');
+        }
+    </script>
+</body>
+</html>
